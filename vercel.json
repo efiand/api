@@ -1,0 +1,12 @@
+{
+	"functions": {
+		"api/*.php": {
+			"runtime": "vercel-php@0.6.0"
+		}
+	},
+	"routes": [
+		{ "src": "/(.*?\\.(txt|ico))", "dest": "/public/$1" },
+		{ "src": "/portfolio.*", "dest": "/api/index.php" },
+		{ "src": "/.*", "dest": "/api/serverless.ts" }
+	]
+}

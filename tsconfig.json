@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"lib": ["es5", "es6"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"outDir": "./build",
+		"target": "es6"
+	},
+	"include": ["./api/**/*", "./src/**/*"]
+}

@@ -1,0 +1,12 @@
+*.env
+*.http
+.DS_Store
+.idea
+.place
+.vercel
+.vscode
+Thumbs.db
+build
+node_modules
+temp
+tmp
