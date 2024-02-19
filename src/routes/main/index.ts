@@ -35,6 +35,6 @@ export default [
 			}
 		},
 		method: HttpMethod.GET,
-		url: '/shared/:filename'
+		url: '/files/:filename'
 	}
 ];
