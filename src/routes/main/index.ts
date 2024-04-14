@@ -8,17 +8,23 @@ export default [
 		handler: () => {
 			return {
 				api: [
-					`https://${HOSTNAME}/portfolio`,
-					`https://${HOSTNAME}/shared/example.jpg`
-				]
+					{
+						title: 'Мои работы и биография из github',
+						url: `https://${HOSTNAME}/portfolio`,
+					},
+					{
+						title: 'Доступ к общим файлам моего Яндекс.диска',
+						url: `https://${HOSTNAME}/files/example.jpg`,
+					},
+				],
 			};
 		},
 		method: HttpMethod.GET,
-		url: '/'
+		url: '/',
 	},
 	{
 		handler: async (req: FastifyRequest<{
-			Params: { filename: string }
+			Params: { filename: string };
 		}>, res: FastifyReply) => {
 			const { filename } = req.params;
 
@@ -35,6 +41,6 @@ export default [
 			}
 		},
 		method: HttpMethod.GET,
-		url: '/shared/:filename'
-	}
+		url: '/files/:filename',
+	},
 ];

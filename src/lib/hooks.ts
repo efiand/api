@@ -5,8 +5,7 @@ import { ReasonPhrases, StatusCodes } from 'http-status-codes';
 
 const { API_KEY } = process.env;
 
-const isCheckable = (method: string): boolean =>
-	method === HttpMethod.DELETE || method === HttpMethod.POST || method === HttpMethod.PUT;
+const isCheckable = (method: string): boolean => method === HttpMethod.DELETE || method === HttpMethod.POST || method === HttpMethod.PUT;
 const isAuthorized = (headers: IncomingHttpHeaders) => {
 	const allowed = headers.authorization === `Bearer ${API_KEY}`;
 	const allowedForTelegram = headers['x-telegram-bot-api-secret-token'] === API_KEY;
@@ -22,7 +21,7 @@ export const handleRequest = async (request: FastifyRequest, reply: FastifyReply
 		return reply.send({
 			error: ReasonPhrases.FORBIDDEN,
 			message: 'Access denied',
-			statusCode: StatusCodes.FORBIDDEN
+			statusCode: StatusCodes.FORBIDDEN,
 		});
 	}
 };

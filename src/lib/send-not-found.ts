@@ -7,6 +7,6 @@ export default (reply: FastifyReply, message: string = ReasonPhrases.NOT_FOUND) 
 	return reply.send({
 		error: ReasonPhrases.NOT_FOUND,
 		message,
-		statusCode: StatusCodes.NOT_FOUND
+		statusCode: StatusCodes.NOT_FOUND,
 	});
 };

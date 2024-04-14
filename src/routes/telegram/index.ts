@@ -5,7 +5,7 @@ import TelegramBot, { SendMessageOptions } from 'node-telegram-bot-api';
 const { TG_ADMIN_ID, TG_TOKEN } = process.env;
 
 const messageOptions: SendMessageOptions = {
-	parse_mode: 'Markdown'
+	parse_mode: 'Markdown',
 };
 
 interface TelegramRequest extends FastifyRequest {
@@ -28,7 +28,7 @@ export default [
 
 				const {
 					chat: { id, username },
-					text
+					text,
 				} = body.message;
 
 				const user = username ? `@${username}` : id;
@@ -38,8 +38,8 @@ export default [
 					await bot.sendMessage(TG_ADMIN_ID, `Сообщение от ${user}:\n${template}`, messageOptions);
 
 					const answer = `Вы писали нам:\n${template}\nСпасибо за обращение! Наш администратор ответит Вам в ближайшее время.`;
-					const addition =
-						'\nЛогин в telegram отсутствует. Пожалуйста, пришлите ссылку для обратной связи.';
+					const addition
+						= '\nЛогин в telegram отсутствует. Пожалуйста, пришлите ссылку для обратной связи.';
 
 					await bot.sendMessage(id, `${answer}${username ? '' : addition}`, messageOptions);
 				}
@@ -48,6 +48,6 @@ export default [
 			reply.send('OK');
 		},
 		method: HttpMethod.POST,
-		url: '/telegram'
-	}
+		url: '/telegram',
+	},
 ];

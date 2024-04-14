@@ -1,6 +1,6 @@
 import type { HTTPMethods } from 'fastify';
 
-export const HOSTNAME =  'api.efiand.vercel.app';
+export const HOSTNAME = 'api.efiand.ru';
 
 export const DEFAULT_SERVER_PORT = 3000;
 
@@ -15,5 +15,5 @@ export const HttpMethod: HttpMethodType = {
 	DELETE: 'DELETE',
 	GET: 'GET',
 	POST: 'POST',
-	PUT: 'PUT'
+	PUT: 'PUT',
 };
