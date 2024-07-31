@@ -1,4 +1,4 @@
-import { FastifyRequest } from 'fastify';
+import type { FastifyRequest } from 'fastify';
 
 export default (request: FastifyRequest) => {
 	const { hostname, protocol, url } = request;

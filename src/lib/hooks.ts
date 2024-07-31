@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 import { HttpMethod } from './constants';
 import { IncomingHttpHeaders } from 'http';
 import { ReasonPhrases, StatusCodes } from 'http-status-codes';

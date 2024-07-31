@@ -1,7 +1,5 @@
 import type { HTTPMethods } from 'fastify';
 
-export const HOSTNAME = 'api.efiand.ru';
-
 export const DEFAULT_SERVER_PORT = 3000;
 
 interface HttpMethodType {

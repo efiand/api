@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 import { HttpMethod } from '../../lib/constants';
 import TelegramBot, { SendMessageOptions } from 'node-telegram-bot-api';
 

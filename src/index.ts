@@ -5,4 +5,7 @@ import { DEFAULT_SERVER_PORT } from './lib/constants';
 const port: number = parseInt(process.env.SERVER_PORT || '', 10) || DEFAULT_SERVER_PORT;
 const server: FastifyInstance = Fastify();
 
-initServer(server, { logger: true }, () => server.listen({ port }));
+initServer(server, { logger: true }, () => {
+	server.listen({ port });
+	console.log(`http://localhost:${port}`);
+});

@@ -1,20 +1,26 @@
-import { FastifyReply, FastifyRequest } from 'fastify';
-import { HttpMethod, HOSTNAME } from '../../lib/constants';
+import type { FastifyReply, FastifyRequest } from 'fastify';
+import { HttpMethod } from '../../lib/constants';
 import { download } from '../../lib/yandex-disk';
 import sendNotFound from '../../lib/send-not-found';
 
 export default [
 	{
-		handler: () => {
+		handler: async ({ protocol, hostname }: FastifyRequest) => {
+			const baseUrl = `${protocol}://${hostname}`;
+
 			return {
 				api: [
 					{
 						title: 'Мои работы и биография из github',
-						url: `https://${HOSTNAME}/portfolio`,
+						url: `${baseUrl}/portfolio`,
 					},
 					{
 						title: 'Доступ к общим файлам моего Яндекс.диска',
-						url: `https://${HOSTNAME}/files/example.jpg`,
+						url: `${baseUrl}/files/example.jpg`,
+					},
+					{
+						title: 'Стихи.ру: страница автора',
+						url: `${baseUrl}/writer/ldsel`,
 					},
 				],
 			};

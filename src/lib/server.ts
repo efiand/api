@@ -1,5 +1,5 @@
+import type { FastifyInstance, FastifyServerOptions, RouteOptions } from 'fastify';
 import routes from '../routes';
-import { FastifyInstance, FastifyServerOptions, RouteOptions } from 'fastify';
 import { handleRequest } from './hooks';
 
 export const initServer = async (server: FastifyInstance) => {
