@@ -11,12 +11,16 @@ export default [
 			return {
 				api: [
 					{
-						title: 'Мои работы и биография из github',
-						url: `${baseUrl}/portfolio`,
+						title: 'Proxy-сервер для файлов без CORS',
+						url: `${baseUrl}/proxy?url=https://aromachef.ru/pictures/recipe/1-ingredients@1x.webp`,
 					},
 					{
 						title: 'Доступ к общим файлам моего Яндекс.диска',
 						url: `${baseUrl}/files/example.jpg`,
+					},
+					{
+						title: 'Мои работы и биография из github',
+						url: `${baseUrl}/portfolio`,
 					},
 					{
 						title: 'Стихи.ру: страница автора',
